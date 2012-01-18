@@ -1,5 +1,9 @@
 D3ebtRecords::Application.routes.draw do
 
+  resources :invoices
+
+  resources :purchases
+
   resources :products
  
   root :to => 'products#index'
