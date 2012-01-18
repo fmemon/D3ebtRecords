@@ -3,7 +3,7 @@
 <p id="notice"><%=  flash.now[:notice] if flash.now[:notice] %></p>
 
 
-<% if !@found %>
+<% if @notfound %>
 <h1>Product Listing</h1>
 <% else %>
 <h1>Product Listing based on search for '<%= params[:name] %>'</h1>

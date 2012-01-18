@@ -3,10 +3,10 @@
 <p id="notice"><%=  flash.now[:notice] if flash.now[:notice] %></p>
 
 
-<% if !@found %>
-<h1>Product Listing</h1>
+<% if @found %>
+  <h1>Product Listing for '<%= params[:name] %>'<%= @found.to_s %></h1>
 <% else %>
-<h1>Product Listing based on search for '<%= params[:name] %>'</h1>
+  <h1>Product Listing <%= @notfound.to_s %></h1>
 <% end %>
 
 <%= render :partial =>'product_table', :object => @products %>
