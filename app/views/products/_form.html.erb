@@ -1,0 +1,30 @@
+<% if product.errors.any? %>
+  <div id="error_explanation">
+    <h2>Could not save product.</h2>
+    <h3><%= pluralize(product.errors.count, 'error') %>, please check the fields.</h3>
+		<ul>
+			<% product.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+  	</ul>
+  </div>
+<% end %>
+
+
+<%= form_for product do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name %><br />
+  <%= f.label :description, 'Description' %>
+  <%= f.text_field :description %><br />
+  <%= f.label :cost, 'Cost' %>
+  <%= f.text_field :cost %><br />  <br /> 
+  <%= f.label :stock, 'stock' %>
+  <%= f.text_field :stock %><br />  
+  <%= f.submit button_label %>
+<% end %>
+
+<br/>
+
+<!-- <%= render :partial => 'nested', :locals => {:product => @product, :cat => "Meow"} %> -->
+
+<br/>
