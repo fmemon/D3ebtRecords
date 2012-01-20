@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  purchase: 
+  reference_number: MyString
+
+two:
+  purchase: 
+  reference_number: MyString
+# == Schema Information
+#
+# Table name: invoices
+#
+#  id               :integer         not null, primary key
+#  purchase_id      :integer
+#  reference_number :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+

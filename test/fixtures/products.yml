@@ -11,3 +11,16 @@ two:
   description: MyText
   cost: 9.99
   stock: 1
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  description :text
+#  cost        :decimal(, )
+#  stock       :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

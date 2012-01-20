@@ -17,18 +17,23 @@ class ProductsController < ApplicationController
 #   end
   
   def index
-  
-    @products = Product.find(:all, :conditions => ['LOWER(name) LIKE ?', "%#{params[:name].downcase}%"])
-
-    #@products = Product.find_all_by_name(params[:name])
-    if @products.empty?
+    # reset the notfound boolean
+    @found = false
+    
+    if params[:name].blank?
       @products = Product.all
-      flash[:notice] = "Sorry, nothing found for #{params[:name]}." unless params[:name].nil?
-     # render :action => 'index'
-      @found = false
     else
-     @found = true
-    # render :action => 'index'
+			@products = Product.find(:all, :conditions => ['LOWER(name) LIKE ? OR LOWER(description) LIKE ?', "%#{params[:name]}%", "%#{params[:name]}%"])
+			if @products.empty?
+				@products = Product.all
+				if params[:name].blank?
+				  flash.now[:notice] = "Sorry, nothing found."
+				else
+				  flash.now[:notice] = "Sorry, nothing found for #{params[:name]}."
+				end
+		  else
+		    @found = true
+		  end
     end
   end
 

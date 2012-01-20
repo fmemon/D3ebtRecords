@@ -1,12 +1,12 @@
 D3ebtRecords::Application.routes.draw do
 
-  resources :products do
-    collection do
-      get 'search'
-    end
-  end
+  resources :invoices
+
+  resources :purchases
+
+  resources :products
  
-  root :to => 'products/index'
+  root :to => 'products#index'
 
   
   #get "products/show"

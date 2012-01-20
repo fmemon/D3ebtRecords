@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  delivered_at: 2012-01-18
+
+two:
+  description: MyText
+  delivered_at: 2012-01-18
+# == Schema Information
+#
+# Table name: purchases
+#
+#  id           :integer         not null, primary key
+#  description  :text
+#  delivered_at :date
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+

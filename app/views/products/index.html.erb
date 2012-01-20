@@ -1,13 +1,9 @@
-<%= render :partial => 'search' %>
+<%= render :partial => 'search_form' %>
 
 <p id="notice"><%=  flash.now[:notice] if flash.now[:notice] %></p>
 
 
-<% if !@found %>
-<h1>Product Listing</h1>
-<% else %>
-<h1>Product Listing based on search for '<%= params[:name] %>'</h1>
-<% end %>
+<%= display_heading_for_index(params[:name], @found) %>
 
 <%= render :partial =>'product_table', :object => @products %>
 
